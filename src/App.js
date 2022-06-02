@@ -21,7 +21,7 @@ function App() {
             element={<Component />}
           ></Route>)}
           {/* <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>}></Route> */}
-          <Route element={<AdminRoute></AdminRoute>}>
+          {/* <Route element={<AdminRoute></AdminRoute>}>
             {adminRoutes.map(({ pathName, Component }, index) => <Route
               key={index}
               path={pathName}
@@ -30,7 +30,8 @@ function App() {
               <Route index element={<AddAdmin></AddAdmin>}></Route>
               <Route path='add-service' element={<AddService></AddService>}></Route>
             </Route>)}
-          </Route>
+          </Route> */}
+
           <Route element={<PrivateRoute></PrivateRoute>}>
             {privateRoutes.map(({ path, Component }, index) => <Route
               key={index}
@@ -38,7 +39,19 @@ function App() {
               element={<Component />}
             ></Route>)}
           </Route>
-
+          {/* <Route element={<AdminRoute></AdminRoute>}>
+            <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+              <Route path='add-admin' element={<AddAdmin></AddAdmin>}></Route>
+              <Route path='add-service' element={<AddService></AddService>}></Route>
+            </Route>
+            
+          </Route> */}
+          <Route element={<AdminRoute />}>
+            <Route path='/dashboard' element={<Dashboard />}>
+              <Route path='add-admin' element={<AddAdmin />} />
+              <Route path='add-service' element={<AddService />} />
+            </Route>
+          </Route>
         </Routes>
       </Navbar>
     </div>

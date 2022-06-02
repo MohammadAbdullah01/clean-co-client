@@ -37,7 +37,11 @@ const Navbar = ({ children }) => {
                             <li><NavLink className='rounded-lg' to='/about'>About</NavLink></li>
                             <li><NavLink className='rounded-lg' to='/services'>Services</NavLink></li>
                             <li><NavLink className='rounded-lg' to='/contact'>Contact</NavLink></li>
-                            {admin && <li><NavLink className='rounded-lg' to='/dashboard'>Dashboard</NavLink></li>}
+                            {admin && <li>
+                                <NavLink to='/dashboard/add-service' className='rounded-lg'>
+                                    Dashboard
+                                </NavLink></li>}
+
                             <li><NavLink className='rounded-lg' to='/login'>Login</NavLink></li>
                             <li class="dropdown dropdown-hover dropdown-end">
                                 <label tabindex="0" class="btn btn-primary btn-outline rounded-lg">BOOK NOW</label>
